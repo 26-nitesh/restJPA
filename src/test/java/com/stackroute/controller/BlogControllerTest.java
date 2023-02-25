@@ -100,7 +100,8 @@ public class BlogControllerTest {
         mockMvc.perform(delete("/api/v1/blog/1")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(asJsonString(blog)))
-                .andExpect(MockMvcResultMatchers.status().isOk()).andDo(MockMvcResultHandlers.print());
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andDo(MockMvcResultHandlers.print());
     }
 
     @Test

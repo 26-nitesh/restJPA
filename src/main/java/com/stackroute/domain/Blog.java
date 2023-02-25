@@ -1,44 +1,68 @@
 package com.stackroute.domain;
 
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /* Add Annotation to declare this class as a JPA Entity */
-public class Blog {
-    /*Add Annotation to declare this field as a Unique Identifier */
-    private int blogId;
-    private String blogTitle;
-    private String authorName;
-    private String blogContent;
+@Entity
+public class Blog  {
+	/**
+	 * 
+	 */
+//	private static final long serialVersionUID = 5376574437305422464L;
+	/* Add Annotation to declare this field as a Unique Identifier */
+	@Id
+	private int blogId;
+	private String blogTitle;
+	private String authorName;
+	private String blogContent;
 
-    /* Generate no-arg and parametrized consructor */
+	/* Generate no-arg and parametrized consructor */
+	public Blog() {
+		// TODO Auto-generated constructor stub
+	}
 
-    public int getBlogId() {
-        return blogId;
-    }
+	public Blog(int blogId, String blogTitle, String authorName, String blogContent) {
+		super();
+		this.blogId = blogId;
+		this.blogTitle = blogTitle;
+		this.authorName = authorName;
+		this.blogContent = blogContent;
+	}
 
-    public void setBlogId(int blogId) {
-        this.blogId = blogId;
-    }
+	public int getBlogId() {
+		return blogId;
+	}
 
-    public String getBlogTitle() {
-        return blogTitle;
-    }
+	public void setBlogId(int blogId) {
+		this.blogId = blogId;
+	}
 
-    public void setBlogTitle(String blogTitle) {
-        this.blogTitle = blogTitle;
-    }
+	public String getBlogTitle() {
+		return blogTitle;
+	}
 
-    public String getAuthorName() {
-        return authorName;
-    }
+	public void setBlogTitle(String blogTitle) {
+		this.blogTitle = blogTitle;
+	}
 
-    public void setAuthorName(String authorName) {
-        this.authorName = authorName;
-    }
+	public String getAuthorName() {
+		return authorName;
+	}
 
-    public String getBlogContent() {
-        return blogContent;
-    }
+	public void setAuthorName(String authorName) {
+		this.authorName = authorName;
+	}
 
-    public void setBlogContent(String blogContent) {
-        this.blogContent = blogContent;
-    }
+	public String getBlogContent() {
+		return blogContent;
+	}
+
+	public void setBlogContent(String blogContent) {
+		this.blogContent = blogContent;
+	}
 }
