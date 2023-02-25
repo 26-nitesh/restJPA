@@ -24,10 +24,6 @@ import com.stackroute.service.BlogService;
 public class BlogController {
 
     /* Provide implementation code for these methods */
-//@GetMapping("/test")
-//public String ftets() {
-//	return "OKKKKKKKKK";
-//}
 	@Autowired
 	private BlogService blogService;
 	
@@ -35,9 +31,6 @@ public class BlogController {
 	@PostMapping("/blog")
     public ResponseEntity<Blog> saveBlog(@RequestBody Blog blog) throws Exception {
        Blog savedBlog = blogService.saveBlog(blog);
-////       if(saveBlog!=null)
-//    	   return new ResponseEntity<Blog>(HttpStatus.CREATED);
-////       return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
        return ResponseEntity.status(HttpStatus.CREATED).body(savedBlog);
     }
     
@@ -46,9 +39,7 @@ public class BlogController {
 	@GetMapping("/blogs")
     public ResponseEntity<List<Blog>> getAllBlogs() {
       List<Blog> allBlogs = blogService.getAllBlogs();
-//      if(allBlogs!=null && !allBlogs.isEmpty())
     	  return new ResponseEntity<>(allBlogs,HttpStatus.FOUND);
-//      return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
     /*This method should fetch the blog taking its id and return the respective blog */
@@ -56,7 +47,7 @@ public class BlogController {
     public ResponseEntity<Blog> getBlogById(@PathVariable int id){
     	 Blog blogById = blogService.getBlogById(id);
          if(blogById!=null)
-       	  return new ResponseEntity<>(blogById,HttpStatus.OK);
+       	  return new ResponseEntity<>(blogById,HttpStatus.FOUND);
          return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
@@ -68,7 +59,6 @@ public class BlogController {
         	return new ResponseEntity<>(blogById,HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-//        return ResponseEntity.ok().build();
     }
 
     /*This method should update blog and return the updatedBlog */

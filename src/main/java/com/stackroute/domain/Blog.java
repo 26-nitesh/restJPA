@@ -1,10 +1,8 @@
 package com.stackroute.domain;
 
-import java.io.Serializable;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+
 import javax.persistence.Id;
 
 /* Add Annotation to declare this class as a JPA Entity */
@@ -13,7 +11,6 @@ public class Blog  {
 	/**
 	 * 
 	 */
-//	private static final long serialVersionUID = 5376574437305422464L;
 	/* Add Annotation to declare this field as a Unique Identifier */
 	@Id
 	private int blogId;
