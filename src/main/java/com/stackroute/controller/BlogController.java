@@ -56,7 +56,7 @@ public class BlogController {
     public ResponseEntity<Blog> getBlogById(@PathVariable int id){
     	 Blog blogById = blogService.getBlogById(id);
          if(blogById!=null)
-       	  return new ResponseEntity<>(blogById,HttpStatus.FOUND);
+       	  return new ResponseEntity<>(blogById,HttpStatus.OK);
          return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
